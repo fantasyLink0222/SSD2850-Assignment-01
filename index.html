@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<form method="POST">
+    <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+        <label for="name" class="visually-hidden">Name:</label>
+        <input type="text" id="name" name="user_name" required placeholder="Name">
+        
+        <label for="mail" class="visually-hidden">Email:</label>
+        <input type="email" id="mail" name="user_email" required placeholder="Email">
+        
+        <label for="password" class="visually-hidden">Password:</label>
+        <input type="password" id="password" name="user_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}" placeholder="Password">
+    </fieldset>
+    
+    <!-- Other fieldsets for languages, frameworks, devops, etc... -->
+    
+    <fieldset>
+        <legend><span class="number">4</span>Additional Info</legend>
+        <label for="heard" class="visually-hidden">How did you hear about us?</label>
+        <select id="heard" name="user_heard">
+            <optgroup label="Online">
+                <option value="social_media">Social Media</option>
+                <!-- Other options -->
+            </optgroup>
+            <optgroup label="In-Person">
+                <option value="friend">Friend</option>
+                <!-- Other options -->
+            </optgroup>
+            <option value="magic">Magic!</option>
+            <option value="other">Other...</option>
+        </select>
+        
+        <!-- Hidden textarea to be shown when 'Magic!' or 'Other...' is selected -->
+        <label for="other-detail" class="visually-hidden extra-detail">Please provide details:</label>
+        <textarea id="other-detail" class="visually-hidden extra-detail" name="user_other_detail"></textarea>
+    </fieldset>
+    
+    <button type="submit">Submit</button>
+    <button type="button" onclick="resetForm()">Clear Form</button>
+</form>
+
+<script>
+    // JavaScript for handling the conditional display of the textarea and form reset
+    // Add your script here
+</script>
+
+</body>
+</html>
