@@ -6,47 +6,154 @@
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-<form method="POST">
-    <fieldset>
-        <legend><span class="number">1</span>Your basic info</legend>
-        <label for="name" class="visually-hidden">Name:</label>
-        <input type="text" id="name" name="user_name" required placeholder="Name">
-        
-        <label for="mail" class="visually-hidden">Email:</label>
-        <input type="email" id="mail" name="user_email" required placeholder="Email">
-        
-        <label for="password" class="visually-hidden">Password:</label>
-        <input type="password" id="password" name="user_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}" placeholder="Password">
-    </fieldset>
-    
-    <!-- Other fieldsets for languages, frameworks, devops, etc... -->
-    
-    <fieldset>
-        <legend><span class="number">4</span>Additional Info</legend>
-        <label for="heard" class="visually-hidden">How did you hear about us?</label>
-        <select id="heard" name="user_heard">
-            <optgroup label="Online">
-                <option value="social_media">Social Media</option>
-                <!-- Other options -->
-            </optgroup>
-            <optgroup label="In-Person">
-                <option value="friend">Friend</option>
-                <!-- Other options -->
-            </optgroup>
-            <option value="magic">Magic!</option>
-            <option value="other">Other...</option>
-        </select>
-        
-        <!-- Hidden textarea to be shown when 'Magic!' or 'Other...' is selected -->
-        <label for="other-detail" class="visually-hidden extra-detail">Please provide details:</label>
-        <textarea id="other-detail" class="visually-hidden extra-detail" name="user_other_detail"></textarea>
-    </fieldset>
-    
-    <button type="submit">Submit</button>
-    <button type="button" onclick="resetForm()">Clear Form</button>
-</form>
+    <main>
+      <div class="color-blob"></div>
+      <div class="color-blob"></div>
+      <section class="form-container">
+        <div class="form">
+          <h2>Signup</h2>
+          <form class="myForm" id="myForm">
+            <fieldset>
+              <legend>Account Info</legend>
+              <label for="username" class="visually-hidden">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter your username..."
+                required
+                pattern="[a-zA-Z0-9]+"
+                title="Username can only contain alpha-numeric characters"
+                aria-label="Username containing only alpha-numeric characters"
+              />
+              <label for="email" class="visually-hidden">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address..."
+                required
+                title="Please input vailid email address"
+                aria-label="Username containing only alpha-numeric characters"
+              />
+              <label for="password" class="visually-hidden">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password..."
+                required
+              />
+            </fieldset>
+            <fieldset>
+              <legend>Dev Skills</legend>
+              <label class="standalone">Core Languages</label>
+              <input type="checkbox" name="html" id="html" value="html" />
+              <label for="html">HTML</label>
+              <input type="checkbox" name="css" id="css" value="css" />
+              <label for="css">CSS</label>
+              <input type="checkbox" name="js" id="js" value="js" />
+              <label for="js">JavaScript</label>
+              <input type="checkbox" name="php" id="php" value="php" />
+              <label for="php">PHP</label>
+              <input type="checkbox" name="c#" id="c#" value="c#" />
+              <label for="c#">C#</label>
+              <input type="checkbox" name="kotlin" id="kotlin" value="kotlin" />
+              <label for="kotlin">Kotlin</label>
+             
+              <label class="standalone">Libraries/Frameworks</label>
+              <input type="checkbox" name="react" id="react" value="react" />
+              <label for="html">React</label>
+              <input type="checkbox" name="angular" id="angular" value="angular" />
+              <label for="css">Angular</label>
+              <input type="checkbox" name="vue.js" id="vue.js" value="vue.js" />
+              <label for="js">Vue.js</label>
+             
+       
+              <label class="standalone">Dev Ops</label>
+              <input type="checkbox" name="git" id="git" value="git" />
+              <label for="html">GIT</label>
+              <input type="checkbox" name="gulp" id="gulp" value="gulp" />
+              <label for="css">Gulp</label>
+              <input type="checkbox" name="docker" id="docker" value="docker" />
+              <label for="js">docker</label>
+              
+            </fieldset>
 
-<script src="./scripts/script.js"></script>
 
-</body>
+            <fieldset> 
+                <legend>Experience</legend>
+                <input
+                  type="radio"
+                  name="experience"
+                  id="beginner"
+                  value="beginner"
+                />
+                <label for="beginner">Beginner</label>
+                <input
+                  type="radio"
+                  name="experience"
+                  id="intermediate"
+                  value="intermediate"
+                />
+                <label for="intermediate">Intermediate</label>
+                <input
+                  type="radio"
+                  name="experience"
+                  id="advanced"
+                  value="advanced"
+                />
+                <label for="advanced">Advanced</label>
+            </fieldset>
+            <fieldset>
+              <legend>Other</legend>
+              <label for="referredby">How did you hear about us?</label>
+              <select name="referredby" id="referredby">
+                <option value="">Please Select...</option>
+                <optgroup label="Person">
+                  <option value="friend">Friend</option>
+                  <option value="family">Family</option>
+                  <option value="colleague">Colleague</option>
+                </optgroup>
+                <optgroup label="Media">
+                  <option value="internet">Internet</option>
+                  <option value="radio">Radio</option>
+                  <option value="tv">TV</option>
+                  <option value="newspaper">Newspaper</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option value="magic">Magic!</option>
+                  <option value="other">Other...</option>
+                </optgroup>
+              </select>
+              <div class="extra-detail">
+                <label for="extra-detail">details, please</label>
+                <textarea
+                  name="extra-detail"
+                  id="extra-detail"
+                  cols="40"
+                  rows="6"
+                ></textarea>
+              </div>
+              
+              <label for="comments">Comments</label>
+              <textarea
+                name="comments"
+                id="comments"
+                cols="40"
+                rows="6"
+              ></textarea>
+            </fieldset>
+            <input type="hidden" name="userid" value="the10" />
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Clear Form" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer><p>&copy; 2024 Chuan He</p></footer>
+    <script src="./scripts/script.js"></script>
+  </body>
+
+
 </html>
